@@ -1,11 +1,11 @@
 from torchvision import datasets
 from torch.utils.data import Subset
-from transform import transform
+from utils.transform import transform
 import matplotlib.pyplot as plt
 
 
 def get_subset():
-    dataset = datasets.ImageFolder('data/', transform=transform)
+    dataset = datasets.ImageFolder('/home/ATML/Task-2/data/', transform=transform)
     subset = Subset(dataset, indices=[0, 1, 2])
     return subset
 
