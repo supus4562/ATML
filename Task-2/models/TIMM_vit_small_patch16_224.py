@@ -1,5 +1,5 @@
 import timm
 
-def build_vit():
+def build_vit_TIMM():
     model = timm.create_model('vit_small_patch16_224', pretrained=True)
     return model
