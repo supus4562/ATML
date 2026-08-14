@@ -1,14 +1,12 @@
 import matplotlib.pyplot as plt
 import math
 
-NUM_HEADS = 16
+NUM_HEADS = 6
 NUM_IMAGES_IN_BATCH = 1
+
 def visualize_attention(attention_matrix):
 
-    rows = NUM_IMAGES_IN_BATCH * 4 
-    cols = 4
-
-    figs, axs = plt.subplots(rows, cols, figsize=(12,12), layout='constrained')
+    figs, axs = plt.subplots(2, 3, figsize=(12, 8), layout='constrained')
     axs = axs.flatten()
     
     for j in range(NUM_IMAGES_IN_BATCH):
