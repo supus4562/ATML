@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import math
 
-NUM_HEADS = 14
+NUM_HEADS = 16
 NUM_IMAGES_IN_BATCH = 1
 
 def visualize_attention(attention_matrix):

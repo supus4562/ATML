@@ -15,7 +15,7 @@ def overlay_attention(attention_matrix, image_path):
                                 size=(224,224),
                                 mode='bilinear',
                                 align_corners=False)
-    heatmap = upsampled.squeeze().detach().cpu().numpy()
+    heatmap = attention_2D_upsampled.squeeze().detach().cpu().numpy()
 
     heatmap = (heatmap - heatmap.min())/(heatmap.max()-heatmap.min())
 
@@ -27,3 +27,4 @@ def overlay_attention(attention_matrix, image_path):
     plt.imshow(heatmap, cmap='jet', alpha=0.5) 
     plt.axis('off')
     plt.show()
+
