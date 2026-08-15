@@ -13,7 +13,10 @@ def visualize_attention(attention_matrix):
         for i in range(NUM_HEADS):
             plot_idx = j * NUM_HEADS + i
             attention_1d = attention_matrix[j, i, 0, 1:].detach().cpu().numpy()
+            
             grid_size = int(math.sqrt(attention_1d.shape[0]))
+
             attention_2d = attention_1d.reshape((grid_size, grid_size))
-            axs[plot_idx].imshow(attention_2d)
+            attention_2d = (attention_2d - attention_2d.min()) / (attention_2d.max() - attention_2d.min() + 1e-8)
+            axs[plot_idx].imshow(attention_2d, cmap='inferno', vmin=0, vmax=1)
             axs[plot_idx].axis('off')

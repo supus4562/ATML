@@ -6,7 +6,7 @@ import math
 
 def overlay_attention(attention_matrix, image_path):
 
-    avg_attention=attention_matrix[0, :, 0, 1:].mean(dim=1)
+    avg_attention=attention_matrix[0, :, 0, 1:].mean(dim=0)
 
     grid_size=int(math.sqrt(avg_attention.shape[0]))
     attention_2D=avg_attention.reshape(1,1,grid_size,grid_size)
